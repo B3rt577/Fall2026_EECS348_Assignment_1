@@ -7,35 +7,35 @@ Outputs: ask user to enter number from 1-10. tell user if guess was correct, hig
 Collaborators: qwen3:1.7b
 Other sources: 
 Creation date: 9/8/2026 7:21PM
-Revision date: 9/8/2026 9:39PM
-Revisions: add required prologue comments
+Revision date: 9/8/2026 10:41PM
+Revisions: add line by line comments and label any AI generated comments
 */
 
-// genertated by qwen3:1.7b
-#include <stdio.h>
+// all code is genertated by qwen3:1.7b
+#include <stdio.h>                  // import standard input output library
 
-int main() {
-    int secret = 7;
-    int guess, attempts = 0;
+int main() {                        // main function takes no params
+    int secret = 7;                 // secret is 7
+    int guess, attempts = 0;        // guess and attempts are 0
 
-    while (attempts < 3) {
-        printf("Enter your guess (1-10): ");
-        scanf("%d", &guess);
+    while (attempts < 3) {          // repition while statement that test if attempts is lesser than 0
+        printf("Enter your guess (1-10): ");        // ask user to enter the guess
+        scanf("%d", &guess);                        // scan the user number
 
-        if (guess == secret) {
-            printf("Win! You guessed the correct number.\n");
-            break;
-        } else if (guess > secret) {
-            printf("Too high! Try again.\n");
-        } else {
-            printf("Too low! Try again.\n");
+        if (guess == secret) {                      // if guess equals to secret
+            printf("Win! You guessed the correct number.\n");       // then print win
+            break;                                  // break out of while loop
+        } else if (guess > secret) {                // else if guess is greater than secret
+            printf("Too high! Try again.\n");       // then print Too high! Try again
+        } else {                                    // otherwise
+            printf("Too low! Try again.\n");        // print Too low! Try again
         }
 
-        attempts++;
+        attempts++;                                 // post-increment attempts
     }
 
-    if (attempts == 3) {
-        printf("Game Over! You failed to guess the correct number.\n");
+    if (attempts == 3) {                            // if all attempts are exhausted and user did not guess the secret correctly
+        printf("Game Over! You failed to guess the correct number.\n");     // then print game over message
     }
 
     return 0;
